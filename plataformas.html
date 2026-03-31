@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Plataformas Digitais</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #ff3c3c, #ff7a00, #ff3c3c, #ff7a00);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+    color: white;
+    text-align: center;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .container {
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	box-sizing: border-box;
+  }
+
+  .cover {
+    position: relative;
+  }
+
+  .cover img {
+    width: 75%;
+    max-width: 260px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Glow atrás do Melodinho */
+  .cover::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255,255,255,0.25), transparent);
+    filter: blur(50px);
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    display: block;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  /* Efeito de clique (muito bom visualmente) */
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+	min-height: 50px;
+  }
+
+  .youtube { background: #ff0000; }
+  .spotify { background: #1db954; }
+  .apple { background: #000; }
+  .deezer { background: #6c00ff; }
+  
+ 
+ 
+  /* partículas flutuando no fundo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.6) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,0.4) 1.5px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 2px);
+
+  background-size: 120px 120px, 180px 180px, 250px 250px;
+
+  animation: particlesMove 20s linear infinite;
+}
+
+/* movimento das partículas */
+@keyframes particlesMove {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-200px);
+  }
+}
+
+
+.hero-text {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  border-radius: 16px;
+  margin: 15px auto 20px;
+  max-width: 90%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<div class='hero-text'>
+  <h1>🐻 Preparado para a aventura?</h1>
+  <p>Escolha onde curtir a Turma do Melodinho 🎵</p>
+  </div>
+
+  <a class="btn youtube" href="https://music.youtube.com/channel/UCQozxyGUdbGZSIU4w0zGd6Q" target="_blank">🎧 Ouvir no YouTube Music</a>
+  <a class="btn spotify" href="https://open.spotify.com/artist/36hZCKDjKqZdaBBJlfbVKp?si=bd12tXx4SUKN3AtvWzNWZA" target="_blank">🎧 Ouvir no Spotify</a>
+  <a class="btn deezer" href="https://www.deezer.com/br/artist/378827101" target="_blank">💜 Deezer</a>
+  <a class="btn apple" href="https://music.apple.com/br/artist/turma-do-melodinho/1884666403" target="_blank">🍎 Apple Music</a>
+  
+
+</div>
+
+</body>
+</html>
