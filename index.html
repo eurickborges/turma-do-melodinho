@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="favicon.png">
-  
+  <link rel="icon" href="favicon.png" />
+
   <title>Turma do Melodinho</title>
   <meta
     name="description"
@@ -38,7 +38,6 @@
       --glass-border: rgba(255, 255, 255, 0.20);
 
       --youtube: linear-gradient(135deg, #ff1b1b, #ff4747);
-      --music: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10));
       --shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
 
       --radius-xl: 28px;
@@ -139,13 +138,13 @@
 
     .top-nav {
       margin-bottom: 22px;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.16);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: linear-gradient(135deg, rgba(255,255,255,0.30), rgba(255,255,255,0.14));
+      border: 1px solid rgba(255,255,255,0.24);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-radius: var(--radius-pill);
       padding: 8px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.14);
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -166,34 +165,47 @@
       padding: 10px 16px;
       border-radius: var(--radius-pill);
       font-weight: 800;
-      font-size: 0.98rem;
+      font-size: 1rem;
       white-space: nowrap;
-      transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .nav-link:hover {
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.16);
+      transform: translateY(-2px) scale(1.03);
+      background: rgba(255,255,255,0.22);
     }
 
     .nav-link.active {
-      background: rgba(255,255,255,0.34);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+      background: linear-gradient(135deg, #ffffff, #ffe7c2);
+      color: #ff5a2f;
+      box-shadow:
+        0 6px 14px rgba(0,0,0,0.12),
+        inset 0 2px 4px rgba(255,255,255,0.60);
     }
 
     .nav-link.disabled {
-      opacity: 0.8;
+      opacity: 0.75;
       cursor: default;
     }
 
     .hero-card {
-      background: var(--glass);
+      background: linear-gradient(135deg, rgba(255,255,255,0.24), rgba(255,255,255,0.16));
       border: 1px solid var(--glass-border);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-radius: var(--radius-xl);
       padding: 22px 18px;
       box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 214, 102, 0.10), rgba(255,255,255,0));
+      pointer-events: none;
     }
 
     .badge {
@@ -228,10 +240,10 @@
       margin-top: 18px;
       text-decoration: none;
       color: var(--white);
-      background: var(--youtube);
+      background: linear-gradient(135deg, #ff1414, #ff3a3a);
       border-radius: var(--radius-lg);
       padding: 16px 18px;
-      box-shadow: 0 16px 30px rgba(255, 33, 33, 0.28);
+      box-shadow: 0 18px 36px rgba(255, 33, 33, 0.32);
       transition: transform 0.22s ease, box-shadow 0.22s ease;
       font-weight: 800;
       animation: pulse 2.5s infinite;
@@ -239,7 +251,7 @@
 
     .cta-primary:hover {
       transform: translateY(-2px) scale(1.01);
-      box-shadow: 0 20px 36px rgba(255, 33, 33, 0.34);
+      box-shadow: 0 22px 40px rgba(255, 33, 33, 0.36);
       animation: none;
     }
 
@@ -265,7 +277,7 @@
       margin-top: 14px;
       padding: 14px 16px;
       border-radius: var(--radius-lg);
-      background: var(--glass-soft);
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10));
       border: 1px solid rgba(255,255,255,0.16);
       box-shadow: var(--shadow);
       transition: transform 0.2s ease, background 0.2s ease;
@@ -319,17 +331,25 @@
       color: var(--white);
       padding: 18px;
       border-radius: var(--radius-lg);
-      background: var(--music);
       border: 1px solid rgba(255,255,255,0.16);
       box-shadow: var(--shadow);
-      transition: transform 0.22s ease, background 0.22s ease, opacity 0.22s ease;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
       position: relative;
       overflow: hidden;
     }
 
     .section-card:hover {
       transform: translateY(-2px) scale(1.01);
-      background: rgba(255,255,255,0.16);
+    }
+
+    .section-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      pointer-events: none;
     }
 
     .section-card::after {
@@ -340,8 +360,32 @@
       pointer-events: none;
     }
 
+    .section-card-music {
+      background: linear-gradient(135deg, rgba(63, 193, 201, 0.28), rgba(255,255,255,0.10));
+    }
+
+    .section-card-music::before {
+      background: linear-gradient(90deg, #40c9ff, #8b5cf6);
+    }
+
+    .section-card-clothes {
+      background: linear-gradient(135deg, rgba(255, 214, 102, 0.28), rgba(255,255,255,0.10));
+    }
+
+    .section-card-clothes::before {
+      background: linear-gradient(90deg, #ffd166, #ffb703);
+    }
+
+    .section-card-accessories {
+      background: linear-gradient(135deg, rgba(162, 89, 255, 0.24), rgba(255,255,255,0.10));
+    }
+
+    .section-card-accessories::before {
+      background: linear-gradient(90deg, #a259ff, #ff66c4);
+    }
+
     .section-card.disabled {
-      opacity: 0.82;
+      opacity: 0.9;
       cursor: default;
     }
 
@@ -362,7 +406,7 @@
     }
 
     .section-icon {
-      font-size: 1.45rem;
+      font-size: 1.55rem;
       flex-shrink: 0;
     }
 
@@ -371,7 +415,7 @@
       z-index: 1;
       font-size: 0.98rem;
       line-height: 1.35;
-      color: rgba(255,255,255,0.92);
+      color: rgba(255,255,255,0.94);
     }
 
     .coming-soon {
@@ -383,8 +427,8 @@
       font-weight: 800;
       padding: 5px 10px;
       border-radius: var(--radius-pill);
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.16);
     }
 
     .footer-note {
@@ -429,7 +473,6 @@
   <main class="page">
     <div class="container">
 
-      <!-- CAPA / HERO -->
       <section class="hero">
         <div class="hero-image-wrap">
           <img
@@ -440,7 +483,6 @@
         </div>
       </section>
 
-      <!-- MENU -->
       <nav class="top-nav" aria-label="Menu principal">
         <div class="nav-track">
           <a href="index.html" class="nav-link active">Início</a>
@@ -450,7 +492,6 @@
         </div>
       </nav>
 
-      <!-- BLOCO PRINCIPAL -->
       <section class="hero">
         <div class="hero-card">
           <div class="badge">🐻 Bem-vindo ao mundo do Melodinho</div>
@@ -487,9 +528,8 @@
         </a>
       </section>
 
-      <!-- ÁREAS -->
       <section class="sections">
-        <a href="plataformas.html" class="section-card">
+        <a href="plataformas.html" class="section-card section-card-music">
           <div class="section-top">
             <span class="section-title">Ouvir músicas</span>
             <span class="section-icon">🎧</span>
@@ -499,7 +539,7 @@
           </p>
         </a>
 
-        <div class="section-card disabled">
+        <div class="section-card section-card-clothes disabled">
           <div class="section-top">
             <span class="section-title">Roupas</span>
             <span class="section-icon">👕</span>
@@ -510,7 +550,7 @@
           <span class="coming-soon">Em breve</span>
         </div>
 
-        <div class="section-card disabled">
+        <div class="section-card section-card-accessories disabled">
           <div class="section-top">
             <span class="section-title">Acessórios</span>
             <span class="section-icon">✨</span>
