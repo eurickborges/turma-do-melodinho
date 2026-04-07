@@ -149,10 +149,11 @@
     }
 
     .nav-track {
-      display: flex;
-      gap: 8px;
-      min-width: max-content;
-    }
+  display: flex;
+  gap: 12px;           /* Aumentei um pouco para dar mais respiro */
+  justify-content: center; /* ESTA É A CHAVE: centraliza os itens */
+  width: 100%;         /* Faz o track ocupar toda a largura interna da pílula */
+}
 
     .nav-link {
       text-decoration: none;
@@ -532,9 +533,10 @@
 
       <nav class="top-nav" aria-label="Menu principal">
         <div class="nav-track">
-          <a href="index.html" class="nav-link active">Início</a>
-         <a href="plataformas.html" target="_blank" class="nav-link">Plataformas</a>
-         <a href="https://drive.google.com/drive/folders/1DNp2-Pc6EIb9YBLXVhFkHo8E6rigCukF?usp=drive_link" target="_blank" class="nav-link">Colorir</a>
+       
+		  <a href="https://www.youtube.com/@TurmadoMelodinho" target="_blank" class="nav-link">Assistir</a>
+         <a href="plataformas.html" target="_blank" class="nav-link">Ouvir</a>
+         <a href="https://drive.google.com/drive/folders/1DNp2-Pc6EIb9YBLXVhFkHo8E6rigCukF?usp=drive_link" target="_blank" class="nav-link">Atividades</a>
 		  <span class="nav-link disabled">Roupas</span>
  
         </div>
@@ -601,11 +603,11 @@
   <section>
   <a href="https://drive.google.com/drive/folders/1DNp2-Pc6EIb9YBLXVhFkHo8E6rigCukF?usp=drive_link" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
     <div class="section-card section-card-accessories"> <div class="section-top">
-        <span class="section-title">Atividades para Colorir</span>
+        <span class="section-title">Atividades Gratuitas</span>
         <span class="section-icon">✏️</span>
       </div>
       <p class="section-text">
-        Baixe desenhos exclusivos para colorir e divirta-se com o Melodinho fora das telas!
+       Baixe agora o Kit de Atividades do Melodinho! Desenhos para colorir e muito mais para soltar a imaginação fora das telas.
       </p>
       <span class="coming-soon" style="background: #28a745;">Baixar Agora</span> </div>
   </a>
