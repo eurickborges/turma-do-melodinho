@@ -138,10 +138,12 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-radius: var(--radius-pill);
-      padding: 8px;
+      padding: 6px; /* Reduzi levemente o padding da "pílula" */
       box-shadow: 0 10px 25px rgba(0,0,0,0.14);
-      overflow-x: auto;
+      overflow-x: auto; /* Permite o deslize se a tela for muito pequena */
       scrollbar-width: none;
+      display: flex; /* Adicionado para ajudar na centralização */
+      justify-content: center;
     }
 
     .top-nav::-webkit-scrollbar {
@@ -149,19 +151,20 @@
     }
 
     .nav-track {
-  display: flex;
-  gap: 12px;           /* Aumentei um pouco para dar mais respiro */
-  justify-content: center; /* ESTA É A CHAVE: centraliza os itens */
-  width: 100%;         /* Faz o track ocupar toda a largura interna da pílula */
-}
+      display: flex;
+      gap: 4px; /* Reduzi o espaço entre botões para caberem lado a lado */
+      justify-content: center; 
+      width: auto; /* Mudado de 100% para auto para não forçar estiramento */
+      min-width: max-content; /* Garante que os botões não encolham */
+    }
 
     .nav-link {
       text-decoration: none;
       color: #fff9f4;
-      padding: 10px 16px;
+      padding: 10px 12px; /* Reduzi de 16px para 12px nas laterais */
       border-radius: var(--radius-pill);
       font-weight: 800;
-      font-size: 1rem;
+      font-size: 0.95rem; /* Reduzi levemente o tamanho da fonte */
       white-space: nowrap;
       transition: all 0.2s ease;
     }
@@ -485,36 +488,23 @@
       color: #fff6ce;
     }
 
-    @media (max-width: 420px) {
+   @media (max-width: 420px) {
+      .nav-link {
+        padding: 8px 10px; /* Padding ainda menor para mobile */
+        font-size: 0.85rem; /* Fonte menor para caber os 4 itens na mesma linha */
+      }
+
+      .nav-track {
+        gap: 2px; /* Espaço mínimo entre botões */
+        justify-content: flex-start; /* Evita que o menu "suma" ao rolar lateralmente */
+      }
+      
       h1 {
         font-size: 1.8rem;
       }
-
-      .subtitle {
-        font-size: 0.97rem;
-      }
-
-      .section-title {
-        font-size: 1.14rem;
-      }
-
-      .section-text {
-        font-size: 0.94rem;
-      }
-
-      .cta-primary-title {
-        font-size: 1.12rem;
-      }
-
-      .cta-primary-text {
-        font-size: 0.92rem;
-      }
-
-      .instagram-user,
-      .email-address {
-        font-size: 0.98rem;
-      }
+      /* ... mantenha o restante das suas regras de media query aqui ... */
     }
+    
   </style>
 </head>
 <body>
